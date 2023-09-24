@@ -1,0 +1,131 @@
+/* jb v aap project bna 
+rhe ho to universal selector
+ ka use kr lo usse project ki look acchi aati hai
+  */
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+
+
+
+
+
+#wrapper{
+    /* kisi v project ke ly ek wrapper lena hdta hai  */
+    /* height viwport ki jitna dena pdtha hai */
+    height:100vh; 
+    overflow-x: hidden; 
+    overflow-y: auto; 
+    /* 3d me perspective: on krna hota hai; */
+    perspective: 10px;
+}
+.container{
+    /* relative hota hai nearerst ancestor ke accorinding jo 
+    ki non static ho */
+    position:relative;
+    display:flex;
+    /* yha justify content
+     advamture ke ly 
+     kiy hai and align v hai */
+    justify-content: center;
+    align-items: center;
+    /* agr hm transfer form style 3d nhi likhenge
+     2-d me chipak
+    jayga orv hm 3d use nhi kr payeng */
+    transform-style: preserve-3d;
+    height: 100%;
+    /* z index overlapping ke ly hoti hai */
+    z-index: -1;
+
+}
+/* .head,.container{
+    display:flex;
+    justify-content:center;
+    align-items:center,;
+} */
+
+.background{
+  
+    /* isme mujhe background image ko dur krni hai to hm yha ztransform use krnege or scale */
+    transform: translatez(-40px) scale(5);
+
+
+
+}
+.foreground{
+    transform: translatez(-20px) scale(3);
+}
+
+.background,.foreground{
+    /* absolute position me overlap hoti hai */
+    position:absolute;
+    height: 100%;
+    width: 100%;
+    /* yha hm z-index advanture ko upr lane 
+    le ly use kiya hai */
+    z-index:-1;
+    /* object fit image cover ke ly use kiya hai; */
+    object-fit: cover;
+}
+h1{
+    position:absolute;
+    top:5rem;
+    font-size: 7rem;
+    color: white;
+    letter-spacing: 4px;
+    text-shadow: 0 0 10px rgba(0,0,0, 3);
+
+}
+section{
+    background-color: rgb(45, 45,45);
+    color:white;
+    padding:5rem 0;
+    
+}
+.setheading{
+    font-size: 5rem;
+    padding:0 10rem;
+}
+
+
+
+.bg1{
+    background-image: url(./sport-1.jpg);
+}
+.bg2{
+    background-image: url(./sport-2.jpg);
+}
+.bg3{
+    background-image: url(./sport-3.jpg);
+}
+
+.text{
+    font-size: 1.5rem;
+    padding:0 10rem;
+    margin: 5rem 0;
+
+}
+.bg{
+    position: relative;
+    width: 100%;
+    background-attachment: fixed;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+}
+.desc{
+    position:absolute;
+    padding:0.5rem 2.5rem ;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateX(-50%);
+    color: black;
+    font-size:3.5rem ;
+    font-weight: 600;
+}
